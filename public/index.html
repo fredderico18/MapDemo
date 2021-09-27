@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Latency Test</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 400px;
+      align-items: center;
+      text-align: center;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #dddddd;
+    }
+
+    .colorPicker {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .colorBox {
+      width: 40px;
+      height: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      width: 1200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="mapid" style="width: 600px; height: 400px; float: left"></div>
+    <div id="pList" style="width: 450px; float: left; padding-left: 10px">
+      <input type="text" name="room" id="room" placeholder="Room">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <button id="btn">Connect</button>
+      <table id="participantTable"></table>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
+  <script src="GT.js"></script>
+  <script src="participant2.js"></script>
+</body>
+
+</html>
